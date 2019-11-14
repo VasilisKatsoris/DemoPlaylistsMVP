@@ -1,0 +1,17 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="horizontal_padding">20dp</dimen>
+    <dimen name="row_cell_vertical_padding">15dp</dimen>
+    <dimen name="playlist_name_tv_padding">10dp</dimen>
+    <dimen name="general_view_padding">10dp</dimen>
+    <dimen name="playlist_value_martin_top">15sp</dimen>
+    <dimen name="chart_height">250dp</dimen>
+    <dimen name="chart_margin_top">15dp</dimen>
+    <dimen name="playlist_name_tv_text_size">22sp</dimen>
+    <dimen name="playlist_value_text_size">19sp</dimen>
+    <dimen name="song_name_text_size">17sp</dimen>
+    <dimen name="artist_name_text_size">19sp</dimen>
+    <dimen name="song_name_martin_top">10dp</dimen>
+</resources>

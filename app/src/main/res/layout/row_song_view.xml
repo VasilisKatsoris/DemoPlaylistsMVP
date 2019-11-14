@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="?android:attr/selectableItemBackground"
+    android:paddingLeft="@dimen/horizontal_padding"
+    android:paddingRight="@dimen/horizontal_padding"
+    android:paddingTop="@dimen/row_cell_vertical_padding"
+    android:paddingBottom="@dimen/row_cell_vertical_padding"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/row_song_artist_tv"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/row_song_artwork_img"
+        android:layout_marginRight="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:textSize="@dimen/artist_name_text_size"
+        android:textColor="@color/colorPrimaryDark"
+        tools:text="Aerosmith"/>
+
+    <TextView
+        android:id="@+id/row_song_name_tv"
+        app:layout_constraintTop_toBottomOf="@+id/row_song_artist_tv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/row_song_artwork_img"
+        android:layout_marginRight="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/song_name_martin_top"
+        android:textColor="@color/colorMediumLightBlue"
+        android:textSize="@dimen/song_name_text_size"
+        tools:text="You only want me when you 're drunk" />
+
+    <ImageView
+        android:id="@+id/row_song_artwork_img"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+
+</android.support.constraint.ConstraintLayout>
