@@ -40,10 +40,9 @@ public class RestRepository implements Repository {
 
     public static final String AUTHORIZATION = "Authorization";
     public static final String BASE_URL = "https://api.spotify.com/v1/";
-    public static final String CLIENT_ID = "cc9288fb228b46c8b4ddd027c7297533";
-    public static final String CLIENT_SECRET = "7d1f2c8584244031abd307713390fcad";
+    public static final String CLIENT_ID = "a2891897f0374a45897b08b34cfa16ca";
+    public static final String CLIENT_SECRET = "8151b92acf1a472c828c4a5a8e3056b3";
     public static String ACCESS_TOKEN;
-
 
     private ApiCalls apiCalls;
     OkHttpClient okHttpClient;
