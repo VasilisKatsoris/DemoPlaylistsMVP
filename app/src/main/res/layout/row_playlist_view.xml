@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/row_playlist_playlistNameTv"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?android:attr/selectableItemBackground"
-    android:paddingLeft="@dimen/horizontal_padding"
-    android:paddingRight="@dimen/horizontal_padding"
-    android:paddingTop="@dimen/row_cell_vertical_padding"
-    android:paddingBottom="@dimen/row_cell_vertical_padding"
-    android:gravity="left|center_vertical"
-    android:textSize="@dimen/playlist_name_tv_text_size"
-    android:textColor="@color/colorMediumLightBlue"
-    tools:text="Playlist name"/>
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/row_playlists_view_cover_img"
+        android:layout_width="80dp"
+        android:layout_height="80dp"/>
+
+    <TextView
+        android:id="@+id/row_playlist_playlistNameTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:paddingLeft="@dimen/horizontal_padding"
+        android:paddingRight="@dimen/horizontal_padding"
+        android:paddingTop="@dimen/row_cell_vertical_padding"
+        android:paddingBottom="@dimen/row_cell_vertical_padding"
+        android:gravity="left|center_vertical"
+        android:textSize="@dimen/playlist_name_tv_text_size"
+        android:textColor="@color/colorMediumLightBlue"
+        tools:text="Playlist name"/>
+</LinearLayout>
