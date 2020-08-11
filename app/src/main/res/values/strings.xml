@@ -1,9 +1,10 @@
 <resources>
-    <string name="app_name">DemoPlaylistsMVP</string>
+    <string name="app_name">Spotify Playlists</string>
     <string name="Playlists">Playlists</string>
     <string name="no_internet_connection">No internet connection available</string>
     <string name="TRY_AGAIN">TRY AGAIN</string>
     <string name="EXIT">EXIT</string>
     <string name="Unknown_error">Unknown error</string>
     <string name="Search_for_a_crypto">Search for a crypto</string>
+    <string name="search_hint">Type a Spotify username such as wizzler</string>
 </resources>
