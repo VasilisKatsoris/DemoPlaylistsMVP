@@ -1,3 +1,8 @@
-# DemoPlaylistsMVP
+# SpotifyPlaylists
 
-A demo showing my implementation of an MVP architecture with dagger and retrofit
+A demo project that searches spotify for a username's public playlists
+
+Clean MVP
+Retrofit
+Glide
+Dagger
