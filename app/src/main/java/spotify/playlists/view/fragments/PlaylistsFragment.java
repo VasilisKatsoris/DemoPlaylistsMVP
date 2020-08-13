@@ -62,7 +62,7 @@ public class PlaylistsFragment extends BaseRecyclerViewFragment<PlaylistsPresent
     public void onViewCreated(@NonNull View v, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(v, savedInstanceState);
 
-        setRecyclerAdapter(new PlaylistsAdapter(new ArrayList<Playlist>(), this));
+        setRecyclerAdapter(new PlaylistsAdapter(new ArrayList<>(), this));
 
         View header = getLayoutInflater().inflate(R.layout.search_layout, null, false);
         addHeader(header);
@@ -107,13 +107,13 @@ public class PlaylistsFragment extends BaseRecyclerViewFragment<PlaylistsPresent
             swipeRefreshLayout.setRefreshing(false);
             getAdapter().setData(playlists);
             notifyDataSetChanged();
-            fadeProgressBar(false);
             animateRecyclerViewWhenLayoutIsReady();
         }
         else{
             getAdapter().setData(new ArrayList<>());
             notifyDataSetChanged();
         }
+        fadeProgressBar(false);
         showNoResultsView(playlists ==null || playlists.size()==0);
     }
 

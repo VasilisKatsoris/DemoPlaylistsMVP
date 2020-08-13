@@ -4,9 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-import spotify.playlists.api.webcallsengine.BaseDAO;
-
-public class PlaylistsDao extends BaseDAO {
+public class PlaylistsDao {
 
     @SerializedName("href")
     private String href;

@@ -11,7 +11,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class RetrofitCallback<T extends BaseDAO, V extends BaseResponseEvent<T>>  implements Callback<T> {
+public class RetrofitCallback<T, V extends BaseResponseEvent<T>>  implements Callback<T> {
 
     private V event;
     private WeakReference<BaseResponseCallback> responseCallbackWeakRef;

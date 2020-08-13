@@ -2,9 +2,7 @@ package spotify.playlists.model.daos;
 
 import com.google.gson.annotations.SerializedName;
 
-import spotify.playlists.api.webcallsengine.BaseDAO;
-
-public class SpotifyTokenDao extends BaseDAO {
+public class SpotifyTokenDao {
 
 
     @SerializedName("access_token")

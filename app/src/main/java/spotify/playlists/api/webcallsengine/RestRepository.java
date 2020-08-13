@@ -13,15 +13,6 @@ import java.util.Map;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import spotify.playlists.api.requests.GetPlaylistContentRequest;
-import spotify.playlists.api.responses.events.PlaylistContentResponseEvent;
-import spotify.playlists.api.responses.events.PlaylistsResponseEvent;
-import spotify.playlists.api.responses.interfaces.PlaylistContentResponseCallback;
-import spotify.playlists.api.responses.interfaces.PlaylistsResponseCallback;
-import spotify.playlists.model.daos.PlaylistImageDao;
-import spotify.playlists.model.daos.PlaylistContentDao;
-import spotify.playlists.model.daos.PlaylistsDao;
-import spotify.playlists.model.daos.SpotifyTokenDao;
 import okhttp3.Authenticator;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
@@ -34,6 +25,19 @@ import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import spotify.playlists.api.requests.GetPlaylistContentRequest;
+import spotify.playlists.api.responses.events.PlaylistContentResponseEvent;
+import spotify.playlists.api.responses.events.PlaylistImagesResponseEvent;
+import spotify.playlists.api.responses.events.PlaylistsResponseEvent;
+import spotify.playlists.api.responses.events.ResponseBodyResponseEvent;
+import spotify.playlists.api.responses.interfaces.PlaylistContentResponseCallback;
+import spotify.playlists.api.responses.interfaces.PlaylistImagesResponseCallback;
+import spotify.playlists.api.responses.interfaces.PlaylistsResponseCallback;
+import spotify.playlists.api.responses.interfaces.ResponseBodyResponseCallback;
+import spotify.playlists.model.daos.PlaylistContentDao;
+import spotify.playlists.model.daos.PlaylistImageDao;
+import spotify.playlists.model.daos.PlaylistsDao;
+import spotify.playlists.model.daos.SpotifyTokenDao;
 
 @Singleton
 public class RestRepository implements Repository {
@@ -133,23 +137,16 @@ public class RestRepository implements Repository {
         call.enqueue(new RetrofitCallback<>(callback, new PlaylistContentResponseEvent()));
     }
 
-    public Response<List<PlaylistImageDao>> getCoverImageInfo(String userId) {
+    public Call<List<PlaylistImageDao>> getCoverImageInfo(String userId, PlaylistImagesResponseCallback callback) {
         Call<List<PlaylistImageDao>> call = apiCalls.getPlaylistCoverImageInfo(userId);
-        try {
-            return call.execute();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+        call.enqueue(new RetrofitCallback<>(callback, new PlaylistImagesResponseEvent()));
+        return call;
     }
 
-    public Response<ResponseBody> downloadImage(String filename){
-        try {
-            return apiCalls.downloadImage(filename).execute();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+    public Call<ResponseBody> downloadImage(String filename, ResponseBodyResponseCallback callback){
+        Call<ResponseBody> call = apiCalls.downloadImage(filename);
+        call.enqueue(new RetrofitCallback<>(callback, new ResponseBodyResponseEvent()));
+        return call;
     }
 
 }

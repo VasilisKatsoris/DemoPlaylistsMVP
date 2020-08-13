@@ -1,8 +1,6 @@
 package spotify.playlists.api.responses.events;
 
-import spotify.playlists.api.webcallsengine.BaseDAO;
-
-public class BaseResponseEvent<T extends BaseDAO> {
+public class BaseResponseEvent<T> {
 
     private T responseDao;
     private String networkError;
@@ -71,16 +69,7 @@ public class BaseResponseEvent<T extends BaseDAO> {
                     setErrorToShowOnFlow(getResponseHTTPStatusCode() + "");
                     return false;
             }
-        }else {
-            BaseDAO responseDao = getResponseDao();
-
-            if(responseDao.isIsError()){
-                setErrorToShowOnFlow(responseDao.getErrorData());
-                return false;
-            }
-
         }
-
         return true;
 
     }

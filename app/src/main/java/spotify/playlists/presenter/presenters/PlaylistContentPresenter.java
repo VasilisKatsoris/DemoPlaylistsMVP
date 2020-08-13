@@ -70,17 +70,19 @@ public class PlaylistContentPresenter extends BasePresenter<PlaylistContentViewI
             });
 
             Track.Album.Images selectedImage = null;
-            for(Track.Album.Images image:track.getAlbum().getImages()){
-                if(image.getHeight()>60 && image.getHeight()<640){
-                    selectedImage = image;
+            if(track.getAlbum()!=null && track.getAlbum().getImages()!=null && track.getAlbum().getImages().size()>0) {
+                for (Track.Album.Images image : track.getAlbum().getImages()) {
+                    if (image.getHeight() > 60 && image.getHeight() < 640) {
+                        selectedImage = image;
+                    }
                 }
-            }
-            if(selectedImage == null){
-                selectedImage = track.getAlbum().getImages().get(0);
+                if (selectedImage == null) {
+                    selectedImage = track.getAlbum().getImages().get(0);
+                }
             }
 
             Song song = new Song();
-            song.setImageUrl(selectedImage.getUrl());
+            song.setImageUrl(selectedImage!=null ? selectedImage.getUrl():null);
             song.setArtistName(artist.toString());
             song.setTrackName(track.getName());
             songs.add(song);
